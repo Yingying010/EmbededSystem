@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 
 
-ser = serial.Serial('/dev/cu.usbserial-1110', 115200, timeout=1) 
+ser = serial.Serial('/dev/cu.usbserial-120', 115200, timeout=1) 
 time.sleep(2)
 
 
@@ -33,7 +33,7 @@ try:
             #"900,92.57,90.00,0.00,5.47,"
             try:
                 parts = line.split(",")
-                if len(parts) >= 1:
+                if len(parts) >= 2:
                     value1 = float(parts[1]) 
                     value2 = float(parts[2])
                     elapsed_time = time.time() - start_time
@@ -57,7 +57,6 @@ except KeyboardInterrupt:
     print("Stopped by user")
     ser.close()
 
-# 保存最终图表
 plt.ioff()
 plt.savefig("angle_data_plot.png")
 plt.show()
