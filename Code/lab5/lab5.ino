@@ -146,7 +146,7 @@ float bound(float x, float x_min, float x_max) {
 //     delay(500);
 // }
 
-
+//task5
 void loop(){
   Serial.println("intError,Control,right_angle,target_angle");
   while((current_time-start_time)<10000){
@@ -154,12 +154,11 @@ void loop(){
     PI_control(target_angle, right_angle, Kp, Ki);
     
     if (control > 0) {
-        Right_mot_forward(control);
+        Right_mot_forward(control+44);
     } else {
-        Right_mot_backward(control);
+        Right_mot_backward(-control+44);
     }
 
-    // Right_mot_forward(100); // 固定输出100的PWM信号
 
     current_time = millis();
     delay(Ts*1000);
