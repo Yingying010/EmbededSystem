@@ -178,42 +178,42 @@ void loop(){
     case 0:  // Go straight
       Move(40, 0, 1.22, 7.0, 1.5, 44, 37, 30.0, 80.0); 
       Motors_stop();
-      delay(10);  // 稳定短暂停顿
+      delay(10);
       right_encoder.clearCount();
-      left_encoder.clearCount();  // 清零编码器 
+      left_encoder.clearCount();
       segment = 1;  
       break;
     case 1:  // Turn left 90 degrees
       Move(0, 0.5, 2.1, 1.0, 0.002, 44, 37, 30.0, 80.0);
       segment = 2;  
       Motors_stop();
-      delay(10);  // 稳定短暂停顿
+      delay(10);
       right_encoder.clearCount();
-      left_encoder.clearCount();  // 清零编码器
+      left_encoder.clearCount();
       break;
     case 2:  // Go straight
       Move(40, 0, 1.2, 7.0, 0.5, 44, 37, 30.0, 80.0);  
       segment = 3;  
       Motors_stop();
-      delay(10);  // 稳定短暂停顿
+      delay(10);
       right_encoder.clearCount();
-      left_encoder.clearCount();  // 清零编码器
+      left_encoder.clearCount();
       break;
     case 3:  // Turn left 90 degrees
-      Move(0, 0.5, 2.0, 1.0, 0.002, 44, 37, 30.0, 80.0);
+      Move(0, 0.5, 2.3, 1.0, 0.002, 44, 37, 30.0, 80.0);
       segment = 4; 
       Motors_stop();
-      delay(10);  // 稳定短暂停顿
+      delay(10);
       right_encoder.clearCount();
-      left_encoder.clearCount();  // 清零编码器 
+      left_encoder.clearCount();
       break;
     case 4:  // Go straight
       Move(40, 0, 0.75, 7.0, 1.5, 44, 37, 30.0, 80.0); 
       segment = 5; 
       Motors_stop();
-      delay(10);  // 稳定短暂停顿
+      delay(10);
       right_encoder.clearCount();
-      left_encoder.clearCount();  // 清零编码器        
+      left_encoder.clearCount();      
       break;
     case 5:  // Turn left 90 degrees
       Move(0, 0.5, 2.0, 1.0, 0.002, 44, 37, 30.0, 80.0);
@@ -266,12 +266,10 @@ void loop(){
     // delay(2000);
     // Serial.println("end2");
 
-    // 停止所有电机
     // Serial.println("stop");
     // Motors_stop();
 
 //     while (true) {
-//         // 程序结束后保持空闲状态
 //     }
 // }
 
